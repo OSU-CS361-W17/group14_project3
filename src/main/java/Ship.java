@@ -25,12 +25,12 @@ public class Ship {
         Coordinate[] location = new Coordinate[length];
         if(orientation == "vertical"){
             for(int i=0; i<length; i++){
-                location[i]= new Coordinate(start.getAcross(), start.getDown()-1);
+                location[i]= new Coordinate(start.getAcross(), start.getDown()-i);
             }
         }
         if(orientation == "horizontal"){
             for(int i=0; i<length; i++){
-                location[i]= new Coordinate(start.getAcross()+1, start.getDown());
+                location[i]= new Coordinate(start.getAcross()+i, start.getDown());
             }
         }
         return location;
@@ -56,9 +56,7 @@ public class Ship {
         return orientation;
     }
 
-    public boolean getCanScan(){
-        return canScan;
-    }
+    public boolean getCanScan(){ return canScan; }
 
     public void setCivilian(){ isCivilian = true; }
     public void setBattle(){ isCivilian = false; }

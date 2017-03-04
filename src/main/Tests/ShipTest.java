@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ShipTest {
     private Coordinate[] coords = new Coordinate[1];
     private Coordinate location = new Coordinate(5,5);
-    private Ship theBlackPearl = new Ship("Black Pearl", 5, location, location, "vertical");
+    private Ship theBlackPearl = new Ship("Black Pearl", 5, location, location, "vertical",true);
 
 
 
@@ -40,6 +40,9 @@ class ShipTest {
     void getCoordinates(){
         coords[0] = location;
         assertEquals(coords, theBlackPearl.getCoordinates());
+    }
+    void scanTest(){
+        assertEquals(true, theBlackPearl.getCanScan());
     }
 
 }
